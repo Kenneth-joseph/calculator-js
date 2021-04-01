@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    /* background-color: antiquewhite; */
+    background-color:whitesmoke;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.container-fliud{
+    margin: 40px auto;
+}
+
+.calc{
+    width: 320px;
+    height: 520px;
+    background-color: rgb(75, 151, 144);
+    margin: 0 auto;
+    /* position: relative; */
+    border-radius: 10px;
+    margin-top: 10px;
+    /* padding-top: 20px; */
+}
+.calc #keys{
+    background-color: rgb(75, 151, 144);
+
+}
+
+.results{
+    height: 120px;
+    background-color: rgb(197, 84, 69);
+}
+
+#keys{
+    height: 400px;
+}
+
+.results #previous-input{
+     text-align: right ;
+     height: 20px;
+     margin: 0 20px;
+     padding-top:10px;
+     font-size: 1.5rem;
+     background-color: rgb(197, 84, 69);
+
+}
+
+.results #current-input{
+    text-align: right ; 
+    height: 60px;
+    margin: 10px  20px;
+    padding-top: 15px;
+    font-size: 2.5rem;
+    color:rgb(44, 40, 40);
+    background-color: rgb(197, 84, 69);
+}
+
+.trigger, .number{
+    width: 50px;
+    height: 47px;
+    margin: 15px;
+    float: left;
+    font-size: larger;
+    color: white;
+    border-radius: 50%;
+}
+
+.number{
+    background-color: rgb(75, 151, 144);
+}
+
+.trigger{
+    background-color: saddlebrown;
+}
