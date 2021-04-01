@@ -19,19 +19,20 @@ class Calculator{
     this.clear()
     }
 
-// creating rlevant functions to perform different tasks
+// creating relevant functions to perform different tasks
 
  // this fucntion will help clear all the data in the results section 
  clear(){
-    this.currentInput=""
-    this.previousInput=""
+    this.currentInput= ''
+    this.previousInput= ''
     this.operation= undefined
-
+    console.log("hey man")
 }
 
 // this is gonna help with deleting characters
 delete(){
- console.log("ALMOST THERE")
+ this.currentInput = this.currentInput.toString().slice(0, -1)
+ console.log("we good")
 }
 
 // this will append values in the result, currentinput section
@@ -69,13 +70,24 @@ compute(){
            break
 
        case '-':
-          result= previous + current
+          result= previous - current
           break
 
-       case '+':
-           result= previous + current
+       case '%':
+           result= previous % current
            break
+
+       case '/':
+            result= previous / current
+            break
+       
+        default:
+            return
+           
    }
+   this.currentInput= result
+   this.operation=undefined
+   this.previousInput=''
 }
 
 //    update display wil help show the results after being computed
@@ -110,6 +122,14 @@ triggerButtons.forEach(button=>{
 
 deleteButton.addEventListener('click', button =>{
     calculator.delete()
+    calculator.updateDisplay()
+    console.log("ALMOST THERE")
+})
+
+
+clearButton.addEventListener('click', button =>{
+    calculator.clear()
+    calculator.updateDisplay()
     // console.log("ALMOST THERE")
 })
 

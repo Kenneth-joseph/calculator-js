@@ -53,7 +53,7 @@
     background-color: rgb(197, 84, 69);
 }
 
-.trigger, .number{
+.trigger, .number, #equal, #clear, #delete{
     width: 50px;
     height: 47px;
     margin: 15px;
