@@ -90,11 +90,34 @@ compute(){
    this.previousInput=''
 }
 
-//    update display wil help show the results after being computed
+//update display wil help show the results after being computed
+
 updateDisplay(){
- this.currentInputTextElement.innerText= this.currentInput
- this.previousInputTextElement.innerText= this.previousInput
- 
+ this.currentInputTextElement.innerText= this.displayNUmber( this.currentInput)
+ if (this.operation != null){
+    this.previousInputTextElement.innerText= `${this.displayNUmber(this.previousInput)} ${this.operation}`
+ }
+ else{
+    this.previousInputTextElement.innerText=''
+ }
+}
+
+displayNUmber( number){
+ const stringNumber = number.toString()
+ const integerNumber = parseFloat(stringNumber.split('.')[0])
+ const decimalNumber = stringNumber.split('.')[1]
+ let integerDisplay
+ if(isNaN(integerNumber)){
+     integerDisplay = ''
+ } else{
+     integerDisplay=integerNumber.toLocaleString('en', { maximumFractionDigits: 0})
+ }
+ if(decimalNumber != null){
+     return `${integerDisplay}.${decimalNumber}`
+ }
+ else{
+     return integerDisplay
+ }
 }
 
 }
@@ -123,14 +146,14 @@ triggerButtons.forEach(button=>{
 deleteButton.addEventListener('click', button =>{
     calculator.delete()
     calculator.updateDisplay()
-    console.log("ALMOST THERE")
+ 
 })
 
 
 clearButton.addEventListener('click', button =>{
     calculator.clear()
     calculator.updateDisplay()
-    // console.log("ALMOST THERE")
+  
 })
 
 equalButton.addEventListener('click', button =>{
